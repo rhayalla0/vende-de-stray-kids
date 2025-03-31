@@ -1,0 +1,270 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos Stray Kids</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Loja Oficial Stray Kids - Produtos</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="compras.html">Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="produtos">
+        <h2>Produtos Disponíveis</h2>
+
+        <div class="produto" onclick="adicionarAoCarrinho('Mini Álbum [ROCK-STAR] - Edição Limitada', 250)">
+            <img src="https://th.bing.com/th?id=OPHS.2h%2fzuBxatln6tg474C474&w=300&h=300&o=5&dpr=1.5&pid=21.1" 
+                 alt="Mini Álbum ROCK-STAR">
+            <p><strong>STRAY KIDS - Mini Álbum [ROCK-STAR]</strong></p>
+            <p>Edição Limitada com Brinde Exclusivo</p>
+            <p><strong>R$ 250,00</strong></p>
+            <button>Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto" onclick="adicionarAoCarrinho('Álbum Stray Kids', 180)">
+            <img src="album-stray-kids.jpg" alt="Álbum Stray Kids">
+            <p>Álbum Stray Kids - R$ 180,00</p>
+            <button>Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto" onclick="adicionarAoCarrinho('Camiseta Stray Kids', 100)">
+            <img src="camiseta-stray-kids.jpg" alt="Camiseta Stray Kids">
+            <p>Camiseta Stray Kids - R$ 100,00</p>
+            <button>Adicionar ao Carrinho</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Loja Oficial Stray Kids. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+          body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.produtos {
+    margin-top: 20px;
+}
+
+.produto {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.produto img {
+    width: 150px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.carrinho {
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+#lista-carrinho {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrinho li {
+    background: black;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+          body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.produtos {
+    margin-top: 20px;
+}
+
+.produto {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.produto img {
+    width: 150px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.carrinho {
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+#lista-carrinho {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-carrinho li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+ script.js (Lógica do Carrinho de Compras)
+js
+Copiar
+Editar
+let carrinho = [];
+let total = 0;
+
+// Adicionar produto ao carrinho
+function adicionarAoCarrinho(produto, preco) {
+    carrinho.push({ produto, preco });
+    total += preco;
+    atualizarCarrinho();
+}
+
+// Atualizar a página do carrinho
+function atualizarCarrinho() {
+    let listaCarrinho = document.getElementById("lista-carrinho");
+    let totalElemento = document.getElementById("total");
+
+    if (listaCarrinho && totalElemento) {
+        listaCarrinho.innerHTML = "";
+        carrinho.forEach((item, index) => {
+            let li = document.createElement("li");
+            li.textContent = `${item.produto} - R$ ${item.preco},00`;
+            listaCarrinho.appendChild(li);
+        });
+
+        totalElemento.textContent = total;
+    }
+
+    // Salvar dados no localStorage para manter o carrinho na navegação entre páginas
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    localStorage.setItem("total", total);
+}
+
+// Carregar os dados do carrinho ao abrir a página de compras
+window.onload = function() {
+    let carrinhoSalvo = JSON.parse(localStorage.getItem("carrinho"));
+    let totalSalvo = localStorage.getItem("total");
+
+    if (carrinhoSalvo) {
+        carrinho = carrinhoSalvo;
+        total = Number(totalSalvo);
+        atualizarCarrinho();
+    }
+};
+
+// Finalizar Compra
+function finalizarCompra() {
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    alert("Compra finalizada! Obrigado por comprar na Loja Stray Kids!");
+    carrinho = [];
+    total = 0;
+    localStorage.clear();
+    atualizarCarrinho();
+}
